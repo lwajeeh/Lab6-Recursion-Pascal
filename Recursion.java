@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Recursion {
-        //
+        // Some color codes I found on stackexchange.
         // Reset
         public static final String RESET = "\033[0m";  // Text Reset
 
@@ -11,15 +11,15 @@ public class Recursion {
         public static final String BLUE = "\033[0;34m";    // BLUE
 
     public static void main(String[] args) {
-    Double n = 9.0;
-    pascalTri(new ArrayList<Double>(0), new ArrayList<Double>(0),n, n);
+    pascalTri(new ArrayList<Double>(0), new ArrayList<Double>(0),20.0, 20.0);
     }
 
+    //recursively print pascal's triangle. Takes in two empty ArrayLists and two Doubles both the amount of levels you want on the triangle.
     public static void pascalTri(ArrayList<Double> preLevl, ArrayList<Double> curLevl, Double totlLevl, Double curIndex) {
-        //determines how many starting spaces are needed to make room for all of the levels; it does this by finding the last middle values log to determine the needed spacing.
-        //I proboly   
+
+        //determines how many starting spaces are needed to make room for all of the levels; it does this by finding the last middle values log to determine the needed spacing.   
         Double spaces = Math.ceil((Math.log10((Math.pow(10, (0.5 * (Math.log10(2) + Math.log10(Math.PI)) + 0.5 * Math.log10(totlLevl) + totlLevl * (Math.log10(totlLevl) - Math.log10(Math.E))))/(Math.pow(10, (0.5 * (Math.log10(2) + Math.log10(Math.PI)) + 0.5 * Math.log10(totlLevl/2) + totlLevl/2 * (Math.log10(totlLevl/2) - Math.log10(Math.E))))*Math.pow(10, (0.5 * (Math.log10(2) + Math.log10(Math.PI)) + 0.5 * Math.log10(totlLevl-totlLevl/2) + (totlLevl-totlLevl/2) * (Math.log10(totlLevl-totlLevl/2) - Math.log10(Math.E))))))))/2 + 0.5 + 1) * 2;
-        //Double spaces = 1.0;
+        
         //spaces the lines correctly
         if (curIndex > 0 && curLevl.isEmpty()) {
             System.out.print(String.format("%1$"+(curIndex*spaces/2)+"s", ""));

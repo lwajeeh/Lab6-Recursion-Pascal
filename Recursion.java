@@ -1,3 +1,9 @@
+// Name: Laith Wajeeh
+// Class: CS 145
+// Assignment: Lab 6: Recursion - Pascal
+// Sources: stackexchange.com and chatgpt (for converting my desmos functions to java code).
+// Purpose: Demonstrates the use of recursion through the printing of pascal's triangle.
+
 import java.util.ArrayList;
 
 public class Recursion {
@@ -12,6 +18,7 @@ public class Recursion {
 
     public static void main(String[] args) {
     pascalTri(new ArrayList<Double>(0), new ArrayList<Double>(0),20.0, 20.0);
+    System.out.println("");
     }
 
     //recursively print pascal's triangle. Takes in two empty ArrayLists and two Doubles both the amount of levels you want on the triangle.
@@ -22,6 +29,7 @@ public class Recursion {
         
         //spaces the lines correctly
         if (curIndex > 0 && curLevl.isEmpty()) {
+            System.out.println("");
             System.out.print(String.format("%1$"+(curIndex*spaces/2)+"s", ""));
         } 
         
@@ -36,7 +44,7 @@ public class Recursion {
                 System.out.println(GREEN + "1" + RESET);
                 curLevl.add(1.0);
                 pascalTri(curLevl, new ArrayList<Double>(0),totlLevl, curIndex - 1);
-            //writes the sum of the two values above it on the previous line.
+            //writes the sum of the two values above it and adds it to the curLevl ArrayList.
             } else {
                 double curVal = preLevl.get(curLevl.size() - 1) + preLevl.get(curLevl.size());
                 curLevl.add(curVal);

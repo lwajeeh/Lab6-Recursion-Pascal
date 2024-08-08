@@ -1,0 +1,15 @@
+// What does the following code do?
+
+// It multiplys the two values by adding a to a until b is equal to 1.
+public int mystery(int a, int b) {
+
+  if (b == 1) {
+
+    return a;
+
+  } else {
+    
+    return a + mystery(a, b - 1);
+    //unpacking the recursion it looks like this a + (a + (a + (a)) ); doing this b number of times; each of those parentheses brackets repersenting a recursion.
+  }
+

@@ -24,7 +24,7 @@ public class Recursion {
     //recursively print pascal's triangle. Takes in two empty ArrayLists and two Doubles both the amount of levels you want on the triangle.
     public static void pascalTri(ArrayList<Double> preLevl, ArrayList<Double> curLevl, Double totlLevl, Double curIndex) {
 
-        //determines how many starting spaces are needed to make room for all of the levels; it does this by finding the last middle values log to determine the needed spacing.   
+        //determines how many starting spaces are needed to make room for all of the levels; it does this by finding the last middle value's log to determine the needed spacing and making sure it's even.   
         Double spaces = Math.ceil((Math.log10((Math.pow(10, (0.5 * (Math.log10(2) + Math.log10(Math.PI)) + 0.5 * Math.log10(totlLevl) + totlLevl * (Math.log10(totlLevl) - Math.log10(Math.E))))/(Math.pow(10, (0.5 * (Math.log10(2) + Math.log10(Math.PI)) + 0.5 * Math.log10(totlLevl/2) + totlLevl/2 * (Math.log10(totlLevl/2) - Math.log10(Math.E))))*Math.pow(10, (0.5 * (Math.log10(2) + Math.log10(Math.PI)) + 0.5 * Math.log10(totlLevl-totlLevl/2) + (totlLevl-totlLevl/2) * (Math.log10(totlLevl-totlLevl/2) - Math.log10(Math.E))))))))/2 + 0.5 + 1) * 2;
         
         //spaces the lines correctly

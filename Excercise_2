@@ -1,0 +1,12 @@
+//Find the error(s) in the following recursive method, and explain how to correct it (them). This method should find the sum of the values from 0 to n.
+
+//this program will never stop as n will never become 0 unless it already is.
+// Also it needs to be static to allow main to call it without instancing it's class.
+public int sum(int n) {
+  if (n == 0) {            
+    return 0;          
+   } else {    
+    return n + sum(n);
+    //This must be changed to this 'return n + sum(n - 1);' for only then will the function return a value lower than it's self each recursion.
+  }   
+}
